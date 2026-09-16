@@ -4,16 +4,14 @@ Find common security mistakes in Laravel code before they reach production.
 
 LaraSift scans your project, shows the exact location of each finding, and suggests a safer approach. It reads your files without starting or executing your Laravel application.
 
-> LaraSift is under development. The current version includes the first Blade XSS check. More Laravel security checks are coming next.
+The first release checks Blade templates for unsafe, unescaped output. More Laravel security checks will be added in future releases.
 
 ## Install
 
-The package is not published yet. After it is available through Composer, install it in your Laravel project as a development dependency. Composer will create the `./vendor/bin/larasift` command, just as it does for Pint.
-
-To work on LaraSift itself today, clone this repository and install its dependencies:
+Install LaraSift as a development dependency in your Laravel project:
 
 ```bash
-composer install
+composer require --dev samigitz/larasift
 ```
 
 ## Run a scan
@@ -77,12 +75,23 @@ Use JSON in CI or other tools:
 
 LaraSift reports potential security problems. A clean scan does not guarantee that an application is secure, and every finding should be reviewed in context.
 
+## Requirements
+
+- PHP 8.2 or later
+- A Laravel application
+
+## Security
+
+Please do not report security vulnerabilities through public GitHub issues. Follow the private reporting instructions in [SECURITY.md](SECURITY.md).
+
 ## Development
 
 Run the project checks:
 
 ```bash
-composer test
-composer analyse -- --debug
-vendor/bin/pint --test
+composer check
 ```
+
+## Licence
+
+LaraSift is open-source software released under the [MIT licence](LICENSE.md).

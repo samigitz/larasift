@@ -3,3 +3,4 @@
 /.phpunit.result.cache
 /.larasift-baseline.json
 /.zsh_history
+/SECURITY_SCANNER_PLAN.md
