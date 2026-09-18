@@ -22,8 +22,8 @@ final class Application extends SymfonyApplication
             new UnescapedBladeRule,
         ]);
 
-        $this->add(new ScanCommand($rules));
-        $this->add(new ListRulesCommand($rules));
+        $this->addCommand(new ScanCommand($rules));
+        $this->addCommand(new ListRulesCommand($rules));
         $this->setDefaultCommand('scan');
     }
 }
